@@ -178,7 +178,7 @@ const toCheckout = () => {
                     <v-col cols="4">
                       <img :src="item.thumbnail" width="100" alt="" />
                     </v-col>
-                    <v-col cols="7" class="">
+                    <v-col cols="12" md="7">
                       <v-card-title
                         style="
                           white-space: pre-wrap;
