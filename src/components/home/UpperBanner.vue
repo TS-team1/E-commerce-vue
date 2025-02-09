@@ -11,7 +11,7 @@
           width="150"
           height="40"
           density="compact"
-          class="text-capitalize mt-10 text-white"
+          class="text-capitalize mt-3 mt-md-5 text-white"
           >Shop Now</v-btn
         >
       </div>

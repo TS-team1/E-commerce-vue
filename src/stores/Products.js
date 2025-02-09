@@ -49,7 +49,7 @@ export const useProductsStore = defineStore("ProductsModule", {
           this.furniture = response.data.products.filter(
             (product) => product.category === "furniture"
           );
-          this.mobiles = response.data.products.filter(
+          this.fragrances = response.data.products.filter(
             (product) => product.category === "fragrances"
           );
           this.beauty = response.data.products.filter(

@@ -72,9 +72,10 @@ const categoryTitle = computed(() => {
           lg="3"
           v-for="item in categoryProduct"
           :key="item.id"
+          class="mt-8 mt-md-0"
         >
           <v-lazy>
-            <v-card class="mx-auto pb-5" :loading="loading">
+            <v-card class="mx-auto pb-5 px-10 px-md-0" :loading="loading">
               <v-hover v-slot="{ isHovering, props }">
                 <div class="image position-relative">
                   <v-img
@@ -155,7 +156,7 @@ const categoryTitle = computed(() => {
               <div class="d-flex justify-center">
                 <v-btn
                   density="compact"
-                  class="rounded-pill"
+                  class="rounded-pill mt-3"
                   variant="outlined"
                   color="primary"
                   @click="

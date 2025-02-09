@@ -25,7 +25,13 @@ const calcToPrice = computed(() => {
   <div class="check-out">
     <v-container fluid class="pa-0">
       <v-row>
-        <v-col cols="7" style="padding: 60px 40px 0px 130px">
+        <v-col
+          cols="12"
+          md="6"
+          lg="7"
+          class="order-1 order-md-0 check-out-left"
+          style="padding: 60px 40px 0px 130px"
+        >
           <v-card elevation="0" color="white" class="pa-5 w-100">
             <v-card-title class="text-h5 font-weight-bold px-0"
               >New ella demo</v-card-title
@@ -115,16 +121,17 @@ const calcToPrice = computed(() => {
             </select>
             <div
               class="user-name d-flex align-center justify-lg-center ga-3 mt-2"
-            >
+            ></div>
+            <div class="d-flex align-center ga-3">
               <input
                 type="text"
                 placeholder="first name"
-                class="border rounded pa-3 flex-grow-1"
+                class="border rounded pa-3 w-50"
               />
               <input
                 type="text"
                 placeholder="last name"
-                class="border rounded pa-3 flex-grow-1"
+                class="border rounded pa-3 w-50"
               />
             </div>
             <input
@@ -171,7 +178,7 @@ const calcToPrice = computed(() => {
             </p>
           </div>
         </v-col>
-        <v-col cols="5">
+        <v-col cols="12" md="6" lg="5">
           <v-card
             elevation="0"
             color="gray-lighten-3"
@@ -226,3 +233,12 @@ const calcToPrice = computed(() => {
     <OrderSuccess :popup="dialog" v-if="dialog" @closePopup="dialog = false" />
   </div>
 </template>
+
+<style scoped lang="scss">
+@media (max-width: 767px) {
+  .check-out-left {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+</style>

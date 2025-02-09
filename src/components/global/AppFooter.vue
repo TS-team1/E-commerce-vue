@@ -14,7 +14,7 @@ const currentYear = new Date().getFullYear();
     <v-footer absolute style="background-color: rgb(225 225 225)">
       <v-container fluid>
         <v-row>
-          <v-col cols="3">
+          <v-col cols="12" sm="6" md="4" lg="3">
             <v-card elevation="0" color="transparent">
               <v-card-title class="font-weight-bold">SHOP</v-card-title>
               <v-card-text
@@ -35,7 +35,7 @@ const currentYear = new Date().getFullYear();
               </v-card-text>
             </v-card>
           </v-col>
-          <v-col cols="3">
+          <v-col cols="12" sm="6" md="4" lg="3">
             <v-card elevation="0" color="transparent">
               <v-card-title class="font-weight-bold">FURTHER INFO</v-card-title>
               <v-card-text class="pb-1 pt-1" style="color: dimgrey">
@@ -61,7 +61,7 @@ const currentYear = new Date().getFullYear();
               </v-card-text>
             </v-card>
           </v-col>
-          <v-col cols="3">
+          <v-col cols="12" sm="6" md="4" lg="3">
             <v-card elevation="0" color="transparent">
               <v-card-title class="font-weight-bold"
                 >CUSTOMER SERVES</v-card-title
@@ -89,7 +89,7 @@ const currentYear = new Date().getFullYear();
               </v-card-text>
             </v-card>
           </v-col>
-          <v-col cols="3">
+          <v-col cols="12" sm="6" md="4" lg="3">
             <v-card elevation="0" color="transparent">
               <v-card-title
                 ><img src="@/assets/images/footer-logo.webp" alt=""
@@ -198,13 +198,17 @@ const currentYear = new Date().getFullYear();
             </div>
           </v-col>
         </v-row>
-        <v-row class="border-t-md">
-          <v-col cols="6">
+        <v-row class="border-t-md text-center">
+          <v-col cols="12" md="6">
             <p>
               &copy; {{ currentYear }} Ella Demo. All Rights Reserved. By Jihad
             </p>
           </v-col>
-          <v-col cols="6" class="d-flex align-center justify-end">
+          <v-col
+            cols="12"
+            md="6"
+            class="d-flex align-center justify-center justify-md-end"
+          >
             <svg
               class="icon icon--full-color"
               viewBox="0 0 38 24"

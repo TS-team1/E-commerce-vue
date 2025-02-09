@@ -178,7 +178,7 @@ const props = defineProps({
           <div class="d-flex justify-center">
             <v-btn
               density="compact"
-              class="rounded-pill"
+              class="rounded-pill mt-3"
               variant="outlined"
               color="primary"
               @click="

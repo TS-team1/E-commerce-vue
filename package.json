@@ -12,6 +12,8 @@
     "axios": "^1.7.9",
     "browserify-fs": "^1.0.0",
     "core-js": "^3.8.3",
+    "firebase": "^11.2.0",
+    "firebase-tools": "^13.29.3",
     "mitt": "^3.0.1",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",

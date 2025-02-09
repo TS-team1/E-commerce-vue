@@ -3,12 +3,19 @@ import { cartStore } from "@/stores/Cart";
 import { storeToRefs } from "pinia";
 import { computed, inject, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import { defineProps } from "vue";
 
 const emitter = inject("emitter");
 const store = cartStore();
 const drawer = ref(false);
 const { cartItems } = storeToRefs(store);
 const router = useRouter();
+
+const props = defineProps({
+  windowWidth: {
+    type: Number,
+  },
+});
 
 const pushCart = () => {
   router.push({ name: "cart_page" });
@@ -47,12 +54,12 @@ emitter.on("openCart", () => {
       location="right"
       v-model="drawer"
       temporary
-      width="370"
+      :width="props.windowWidth <= 767 ? props.windowWidth / 2 : 370"
     >
       <div class="cart pa-5">
         <v-card elevation="0">
           <v-card-title
-            class="font-weight-bold px-0 d-flex justify-space-between align-center"
+            class="font-weight-bold text-sm-body px-0 d-flex justify-space-between align-center"
             >Shopping Cart
             <v-icon class="cursor-pointer" size="25" @click="drawer = false"
               >mdi-close
@@ -170,10 +177,10 @@ emitter.on("openCart", () => {
         >
           <v-container class="px-0 mt-5 pr-0">
             <v-row v-for="item in cartItems" :key="item.id">
-              <v-col cols="5">
-                <img :src="item.thumbnail" width="100" alt="" />
+              <v-col cols="12" sm="5">
+                <img :src="item.thumbnail" class="w-100" alt="" />
               </v-col>
-              <v-col cols="7">
+              <v-col cols="12" sm="7">
                 <v-card-title
                   style="
                     white-space: pre-wrap;
@@ -264,6 +271,19 @@ emitter.on("openCart", () => {
   &::-webkit-scrollbar-track {
     width: 5px;
     background-color: rgb(201, 201, 201);
+  }
+}
+
+@media (max-width: 767px) {
+  .drawer {
+    .v-card-text {
+      font-size: 12px !important;
+    }
+    button {
+      font-size: 12px !important;
+      height: 30px !important;
+      width: 90px !important;
+    }
   }
 }
 </style>

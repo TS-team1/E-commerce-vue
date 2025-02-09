@@ -13,13 +13,15 @@ import qualityData from "@/data/quality.json";
           :key="item.title"
           class="text-center rounded-md"
           cols="12"
-          md="2"
+          sm="6"
+          md="3"
+          lg=""
         >
           <v-hover v-slot="{ isHovering, props }">
             <v-card
               v-bind="props"
               height="300"
-              width="230"
+              width="100%"
               :elevation="isHovering ? 5 : 1"
               class="d-flex flex-column justify-center align-center"
               :class="isHovering ? 'bg-blue-lighten-4' : 'white'"

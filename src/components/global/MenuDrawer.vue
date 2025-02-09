@@ -4,12 +4,18 @@ import { storeToRefs } from "pinia";
 import { inject, onMounted } from "vue";
 import enIcon from "@/assets/images/en.png";
 import deIcon from "@/assets/images/de.png";
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 
 const store = useProductsStore();
 const { categories } = storeToRefs(store);
 const emitter = inject("emitter");
 const drawer = ref(false);
+
+const props = defineProps({
+  windowWidth: {
+    type: Number,
+  },
+});
 
 const langs = ref([
   {
@@ -33,7 +39,7 @@ onMounted(() => {
     <v-navigation-drawer
       v-model="drawer"
       temporary
-      width="370"
+      :width="props.windowWidth <= 767 ? props.windowWidth / 2 : 370"
       class="px-5 pt-2"
     >
       <v-card elevation="0">
@@ -56,16 +62,20 @@ onMounted(() => {
               })
             "
           >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title class="nav-link">{{
+              item.title
+            }}</v-list-item-title>
           </v-list-item>
           <v-list-group>
             <template v-slot:activator="{ props }">
               <v-list-item v-bind="props">
-                <v-list-item-title>Languages</v-list-item-title>
+                <v-list-item-title class="nav-link"
+                  >Languages</v-list-item-title
+                >
               </v-list-item>
             </template>
             <v-list-item v-for="lang in langs" :key="lang.lang">
-              <v-list-item-title class="px-0 d-flex align-center ga-2">
+              <v-list-item-title class="px-0 nav-link d-flex align-center ga-2">
                 <img :src="lang.icon" alt="" width="30" />
                 {{ lang.lang }}
               </v-list-item-title>
@@ -76,3 +86,11 @@ onMounted(() => {
     </v-navigation-drawer>
   </div>
 </template>
+
+<style scoped lang="scss">
+@media (max-width: 767px) {
+  .nav-link {
+    font-size: 13px !important;
+  }
+}
+</style>

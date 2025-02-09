@@ -138,7 +138,7 @@ const toCheckout = () => {
             >Congrats on Free Shipping</v-card-text
           >
         </v-col>
-        <v-col cols="8" v-if="cartItems.length">
+        <v-col cols="12" md="8" v-if="cartItems.length">
           <v-table hover class="mt-5 w-100 border-b-md">
             <thead class="bg-grey">
               <tr>
@@ -173,10 +173,10 @@ const toCheckout = () => {
             </thead>
             <tbody>
               <tr v-for="item in cartItems" :key="item.id">
-                <td>
+                <td class="">
                   <v-row>
-                    <v-col cols="4">
-                      <img :src="item.thumbnail" width="100" alt="" />
+                    <v-col cols="12" md="4">
+                      <img :src="item.thumbnail" class="w-100" alt="" />
                     </v-col>
                     <v-col cols="12" md="7">
                       <v-card-title
@@ -196,7 +196,7 @@ const toCheckout = () => {
                     </v-col>
                   </v-row>
                 </td>
-                <td>${{ item.price.toFixed(2) }}</td>
+                <td>${{ item.price }}</td>
                 <td>
                   <div
                     class="quantity rounded-pill border px-3 py-1 d-flex align-center"
@@ -221,7 +221,7 @@ const toCheckout = () => {
                 </td>
                 <td>
                   <v-card-text class="px-0 py-0 font-weight-bold text-center">
-                    ${{ item.price * item.quantity.toFixed(2) }}
+                    ${{ item.price * item.quantity }}
                   </v-card-text>
                 </td>
                 <td class="text-center">
@@ -277,7 +277,12 @@ const toCheckout = () => {
             </div>
           </div>
         </v-col>
-        <v-col cols="4" class="ps-5" v-if="cartItems.length">
+        <v-col
+          cols="12"
+          md="4"
+          class="pa-5 mt-8 mt-md-0"
+          v-if="cartItems.length"
+        >
           <v-card elevation="0">
             <v-card-title
               style="font-size: 15px"
@@ -287,7 +292,7 @@ const toCheckout = () => {
             <v-card-text class="border-b-sm">
               <span>Subtotal</span>
               <span class="float-right font-weight-black"
-                >${{ calcToPrice.toFixed(2) }}</span
+                >${{ calcToPrice }}</span
               >
             </v-card-text>
             <v-card-text class="text-grey-darken-1">
@@ -324,7 +329,7 @@ const toCheckout = () => {
             <v-card-text class="border-t-sm mt-2 border-b-sm">
               <span>Total</span>
               <span class="float-right font-weight-black"
-                >${{ calcToPrice.toFixed(2) }}</span
+                >${{ calcToPrice }}</span
               >
             </v-card-text>
             <v-card-actions class="flex-column">
@@ -355,3 +360,13 @@ const toCheckout = () => {
     </v-container>
   </div>
 </template>
+
+<style scoped lang="scss">
+@media (max-width: 767px) {
+  .cart_page {
+    table {
+      width: 800px !important;
+    }
+  }
+}
+</style>

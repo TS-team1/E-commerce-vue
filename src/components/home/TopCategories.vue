@@ -15,7 +15,10 @@ import categories from "@/data/categories.json";
       <v-container fluid class="pa-10">
         <v-row>
           <v-col
-            cols="2"
+            cols="12"
+            sm="4"
+            md="3"
+            lg="2"
             v-for="item in categories"
             :key="item.title"
             class="text-center"

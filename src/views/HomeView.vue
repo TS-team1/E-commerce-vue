@@ -59,7 +59,7 @@ onMounted(async () => {
     titleColor="black"
     :index="0"
   />
-  <div class="tv-img pa-3">
+  <div class="tv-img pa-3 w-100">
     <img src="@/assets/images/tv-banner.webp" alt="" />
   </div>
   <NewProduct :products="furniture" />

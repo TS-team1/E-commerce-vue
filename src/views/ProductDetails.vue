@@ -44,7 +44,7 @@ onMounted(async () => {
   <div class="product-detaild mt-16">
     <v-container fluid>
       <v-row>
-        <v-col cols="7" class="text-center">
+        <v-col cols="12" md="7" class="text-center">
           <img
             :src="tab ? tab : singleProduct.thumbnail"
             alt=""
@@ -67,7 +67,7 @@ onMounted(async () => {
             </v-tab>
           </v-tabs>
         </v-col>
-        <v-col cols="5">
+        <v-col cols="12" md="5" class="mt-8 mt-md-0">
           <v-skeleton-loader
             type="article ,article ,article"
             v-if="loading"
